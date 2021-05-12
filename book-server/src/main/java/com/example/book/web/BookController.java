@@ -20,6 +20,7 @@ public class BookController {
         return new ResponseEntity<>(bookService.LoadAll(), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping ("/book")
     public ResponseEntity<?> save(@RequestBody Book book){
         return new ResponseEntity<>(bookService.Save(book), HttpStatus.CREATED);
