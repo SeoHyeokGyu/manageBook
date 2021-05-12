@@ -14,6 +14,7 @@ public class BookController {
 
     private final BookService bookService;
 
+    @CrossOrigin
     @GetMapping("/book")
     public ResponseEntity<?> findAll(){
         return new ResponseEntity<>(bookService.LoadAll(), HttpStatus.OK);
