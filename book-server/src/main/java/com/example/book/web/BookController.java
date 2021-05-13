@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
+@CrossOrigin
 public class BookController {
 
 
@@ -26,18 +27,22 @@ public class BookController {
         return new ResponseEntity<>(bookService.Save(book), HttpStatus.CREATED);
     }
 
+    @CrossOrigin
     @GetMapping("/book/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id){
         return new ResponseEntity<>(bookService.LoadOne(id), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PutMapping ("/book/{id}")
     public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Book book){
         return new ResponseEntity<>(bookService.LoadAll(), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @DeleteMapping("/book/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Long id){
         return new ResponseEntity<>(bookService.Delete(id), HttpStatus.OK);
     }
+
 }

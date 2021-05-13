@@ -31,14 +31,12 @@ const SaveForm = (props) => {
             return res.json()
         })
             .then(res=>{
-            // if(res != null){
-            //     props.history.push("/");
-            // }else {
-            //     alert("책 등록에 실패하였습니다.");
-            // }
-            }).catch((error)=>{
-                console.log(error)
-        });
+            if(res != null){
+                props.history.push("/");
+            }else {
+                alert("책 등록에 실패하였습니다.");
+            }
+            });
     }
 
     return (
