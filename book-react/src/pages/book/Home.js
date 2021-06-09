@@ -19,8 +19,7 @@ const Home = () => {
               책 리스트 보기
               {books.map((book) =><BookItem key={book.id} book={book}/>
               )}
-
-          </h1>  
+          </h1>
         </div>
     );
 };
